@@ -1,0 +1,34 @@
+{
+  "name": "react-cli",
+  "version": "1.0.0",
+  "description": "这是react的一个脚手架",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --config ./build/webpack.dev.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qq362334256/react-cli.git"
+  },
+  "keywords": [
+    "react",
+    "react-cli"
+  ],
+  "author": "miaoyu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qq362334256/react-cli/issues"
+  },
+  "homepage": "https://github.com/qq362334256/react-cli#readme",
+  "dependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^6.4.1",
+    "babel-preset-es2015": "^6.24.1",
+    "css-loader": "^0.28.0",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "less-loader": "^4.0.3",
+    "style-loader": "^0.16.1",
+    "webpack": "^2.3.3"
+  }
+}
