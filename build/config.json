@@ -1,0 +1,16 @@
+{
+	"maxFileSize": 400000,
+	"devServer": {
+		"port": 5001
+	},
+	"devConfig": {
+		"API_URL": "http://127.0.0.1:5001",
+		"DOMIAN_URL": "http://127.0.0.1:5001",
+		"RESOURCES_URL": "http://127.0.0.1:5001"
+	},
+	"proConfig": {
+		"API_URL": "http://127.0.0.1:5001",
+		"DOMIAN_URL": "http://127.0.0.1:5001",
+		"RESOURCES_URL": "http://127.0.0.1:5001"
+	}
+}
