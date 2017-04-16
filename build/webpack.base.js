@@ -10,9 +10,7 @@ module.exports = {
 	context: path.resolve(dirName, 'app'),
 	entry: {
 		// 应用路口
-		app: './entry.js',
-		// lib依赖入口
-		verdor: 'react'
+		app: './entry.js'
 	},
 	output: {
 		// 输出目录
@@ -37,7 +35,7 @@ module.exports = {
 	resolve: {
 		// 默认查找模块目录
  		modules: ['node_modules'],
-    	// 使用的扩展名，最好不要配置
+    	// 使用的扩展名，最好不要配置，这样在引入模块的时候更直观
     	// extensions: ['.js', '.json', '.jsx', '.css'],
     	// 别名设置
     	alias: {
@@ -46,13 +44,11 @@ module.exports = {
     	}
 	},
   	plugins: [
-		// 抽出依赖库、和公共文件
-		new webpack.optimize.CommonsChunkPlugin({
-            names: ['vendor', 'public']
-        }),
         // 自动创建html文件
         new htmlWebpackPlugin()
-	]
+	],
+	// 部署资源映射
+	devtool: 'cheap-module-source-map',
 };
 
 

@@ -2,13 +2,19 @@ const
 	webpack = require('webpack'),
 	extractTextPlugin = require('extract-text-webpack-plugin'),
 	{ maxFileSize, proConfig: {RESOURCES_URL: publicPath} } = require('./config.json'),
-	{ context, entry, crossOriginLoading, resolve, plugins, output: {path}, module: {rules} } = require('./webpack.base.js');
+	{ context, entry, crossOriginLoading, resolve, plugins, devtool, output: {path}, module: {rules} } = require('./webpack.base.js');
+
+
+// 优化路口
+// lib依赖入口模块
+entry.vendor = ['react'];
 
 // 导出生产配置对象
 module.exports = {
 	context,
 	entry,
 	resolve,
+	devtool,
 	output: {
 		path,
 		publicPath,
@@ -35,6 +41,10 @@ module.exports = {
 	},
   	plugins: [
   		...plugins,
+ 		// 抽出依赖库、和公共文件
+		new webpack.optimize.CommonsChunkPlugin({
+            names: ['vendor', 'public']
+        }),
 	    // 提取 CSS 到单独的文件中
 	    new ExtractTextPlugin('css/[name].[chunkhash].min.css'),
 	    // 压缩文件
